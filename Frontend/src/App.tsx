@@ -40,7 +40,7 @@ function App() {
 
       axios({
         method: "post",
-        url: "http://localhost:8000/",
+        url: "http://backend:8000/",
         data: formData,
         headers: { "Content-Type": "multipart/form-data" },
       })

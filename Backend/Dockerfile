@@ -1,0 +1,10 @@
+FROM --platform=linux/amd64 python:3.9-alpine
+WORKDIR /app
+COPY requirements.txt requirements.txt
+# RUN pip3 install --upgrade pip setuptools wheel
+# RUN pip3 install "numpy==1.21.5" --no-binary :all:
+# RUN pip3 install --upgrade setuptools
+RUN pip3 install -r requirements.txt
+EXPOSE 8000
+COPY . .
+CMD ["python3", "api.py"]
