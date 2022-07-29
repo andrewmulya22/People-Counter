@@ -1,13 +1,19 @@
 version: '3'
 services:
   backend:
-    platform: linux/amd64
     image: andrewmulya/peoplecounter-backend
     ports:
       - "8000:8000"
-  
+  nginx:
+    depends_on:
+      - backend
+      - frontend
+    restart: always
+    image: andrewmulya/peoplecounter-nginx
+    ports:
+      - "3050:80"
+    volumes:
   frontend:
-    platform: linux/amd64
     image: andrewmulya/peoplecounter-frontend
     ports:
       - "3000:3000"

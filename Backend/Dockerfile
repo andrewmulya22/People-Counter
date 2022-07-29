@@ -7,6 +7,5 @@ RUN python3 -m pip install requests Flask Flask-Cors
 # RUN pip3 install "numpy==1.21.5" --no-binary :all:
 # RUN pip3 install --upgrade setuptools
 RUN pip3 install -r requirements.txt
-EXPOSE 8000
 COPY . .
 CMD ["python3", "api.py"]

@@ -18,7 +18,9 @@ jobs:
       run: |
         docker build -t andrewmulya/peoplecounter-backend ./Backend
         docker build -t andrewmulya/peoplecounter-frontend ./Frontend
+        docker build -t andrewmulya/peoplecounter-nginx ./nginx
     - name: Push the Docker images
       run: |
         docker push andrewmulya/peoplecounter-backend:latest
         docker push andrewmulya/peoplecounter-frontend:latest
+        docker push andrewmulya/peoplecounter-nginx:latest
