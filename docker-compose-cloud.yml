@@ -12,7 +12,6 @@ services:
     image: andrewmulya/peoplecounter-nginx
     ports:
       - "3050:80"
-    volumes:
   frontend:
     image: andrewmulya/peoplecounter-frontend
     ports:
