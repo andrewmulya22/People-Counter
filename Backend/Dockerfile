@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 python:3.9-alpine
+FROM --platform=linux/amd64 python:slim
 WORKDIR /app
 COPY requirements.txt requirements.txt
 RUN python3 -m pip install --upgrade pip setuptools wheel
