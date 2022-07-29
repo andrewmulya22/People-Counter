@@ -1,0 +1,18 @@
+version: '3'
+services:
+  backend:
+    platform: linux/amd64
+    image: andrewmulya/peoplecounter-backend
+    ports:
+      - "8000:8000"
+  
+  frontend:
+    platform: linux/amd64
+    image: andrewmulya/peoplecounter-frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    volumes:
+      - /app/node_modules
+      - ./Frontend:/app
