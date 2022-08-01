@@ -1,12 +1,8 @@
 FROM python:3.9-slim-buster
 WORKDIR /app
 COPY requirements.txt requirements.txt
-RUN apt-get install gcc python3-dev
 RUN python3 -m pip install --upgrade pip setuptools wheel
 RUN python3 -m pip install requests Flask Flask-Cors
-# RUN pip3 install --upgrade pip setuptools wheel
-# RUN pip3 install "numpy==1.21.5" --no-binary :all:
-# RUN pip3 install --upgrade setuptools
 RUN pip3 install -r requirements.txt
 RUN apt-get update
 RUN apt-get install ffmpeg libsm6 libxext6  -y
