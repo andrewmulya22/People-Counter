@@ -1,7 +1,6 @@
 version: '3'
 services:
   backend:
-    platform: linux/amd64
     build:
       dockerfile: Dockerfile
       context: ./Backend
@@ -9,9 +8,19 @@ services:
       - "8000:8000"
     volumes:
       - ./Backend:/app
-  
+
+  nginx:
+    build:
+      dockerfile: Dockerfile
+      context: ./nginx
+    ports:
+      - "3050:80"
+    depends_on:
+      - backend
+      - frontend
+    restart: always
+
   frontend:
-    platform: linux/amd64
     build:
       dockerfile: Dockerfile
       context: ./Frontend

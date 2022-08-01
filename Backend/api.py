@@ -30,5 +30,11 @@ def index():
     return result, 200
 
 
+@ app.route('/api', methods=['POST'])
+def scindex():
+    result = inference(request.form['img'])
+    return result, 200
+
+
 if __name__ == '__main__':
-    app.run(port='8000')
+    app.run(port='8000', debug=True, host='0.0.0.0')
